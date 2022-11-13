@@ -65,7 +65,7 @@ class UIManager:
 
     def read_settings(self, default: str):
         try:
-            with open("settings.json", mode="r") as file:
+            with open("../settings.json", mode="r") as file:
                 self.settings = json.load(file)
         except FileNotFoundError:
             self.settings = {
@@ -76,5 +76,5 @@ class UIManager:
             self.write_settings()
 
     def write_settings(self):
-        with open("settings.json", mode="w") as json_file:
+        with open("../settings.json", mode="w") as json_file:
             json.dump(self.settings, json_file, indent=4)
